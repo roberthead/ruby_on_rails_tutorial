@@ -482,7 +482,7 @@ Let's make a blog!
 
 #### User Story #1: Creating Content
 
-IN ORDER TO create content
+IN ORDER TO provide content for our readers
 AS bloggers
 WE WANT to enter posts
 
@@ -504,7 +504,7 @@ Now let's run the migration that the generator creator.
 
 On the left side of the IDE, close and reopen the db directory to refresh its contents.
 
-Click on schema.rb and read the file. It's a description of the structure of your database, which now includes a `posts` table. Notice that it has the columns we asked for, plus `created_at` and `updated_at`. An integer `id` column is also implied, but not shown in the schema file.
+Click on schema.rb and read the file. The schema file explains the structure of your database, which now includes a `posts` table. Notice that it has the columns we asked for, plus `created_at` and `updated_at`. An integer `id` column is also implied, but not shown in the schema file.
 
 ![Examine the database schema](/images/rails/9-examine_schema.png)
 
