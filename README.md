@@ -316,6 +316,8 @@ A class defines the behavior of its instances in **methods**. Methods are define
     cat = Animal.new('Cat', 'Mrew!')
     cat.speak  # raises an exception because we didn't define this method
 
+Notice the comments? One-line comments start with a `#`
+
 Want to add more functionality to the class? You can reopen any class any time!
 
     class Animal
