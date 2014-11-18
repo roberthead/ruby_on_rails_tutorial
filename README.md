@@ -450,22 +450,24 @@ First, add a new tab in the console area of the IDE:
 
 ![Add a new tab](/images/rails/4-new_console_tab.png)
 
-![New tab open](/images/rails/5-new_tab_open.png)
+Get back to our working directory:
 
     cd /workspace/blog
 
-Configure git, replacing John Doe with your own name and email address.
+![New tab open](/images/rails/5-new_tab_open.png)
+
+Now let's configure git, replacing John Doe with your own name and email address.
 
     git config --global user.name "John Doe"
     git config --global user.email johndoe@example.com
 
-Initialize the repository and make your first commit.
+Initialize the repository.
 
     git init
 
 ![Initialize git](/images/rails/6-git.png)
 
-Enter your configuration and redo:
+Now let's make our first commit!
 
     git add .
     git commit -m "Initial commit"
