@@ -298,7 +298,11 @@ There are other iterators. For example, `map` collects the results of the block
 
 Ruby is an object-oriented language, so naturally we want to write our own classes.
 
-We define a class with the `class` keyword. We define **methods** with the 'def' keyword.
+We define a **class** with the `class` keyword.
+
+An **instance** of a class will store data in **instance variables**, which have names that are are prefixed with `@`
+
+A class defines the behavior of its instances in **methods**. Methods are defined using the `def` keyword.
 
     class Animal
       # constructor
