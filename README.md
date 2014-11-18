@@ -591,6 +591,7 @@ To review, we:
 - re-bundled our gems
 - ran a rake task to finish installing `rails_admin`
 - restarted the server
+- committed our changes to the repository
 
 And we now have a functioning admin system from which we can create and manage content. Boom.
 
