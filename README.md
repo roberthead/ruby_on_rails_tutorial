@@ -16,37 +16,37 @@ Visit http://nitrous.io in a web browser
 
 Fill out the sign up form ad click "Sign Up for Free"
 
-![Sign up to Nitrous](images/1-nitrous_sign_up.png)
+![Sign up to Nitrous](images/nitrous/1-nitrous_sign_up.png)
 
 Confirm your account via your email
 
-![Confirm your account](images/2-confirm_via_email.png)
+![Confirm your account](images/nitrous/2-confirm_via_email.png)
 
 Sign In
 
-![Sign in](images/3-sign_in.png)
+![Sign in](images/nitrous/3-sign_in.png)
 
 Click "Open Dashboard" from the homepage
 
-![Open dashboard](images/4-open_dashboard.png)
+![Open dashboard](images/nitrous/4-open_dashboard.png)
 
 Fill out the "Create Your First Box" form and click "Create Box"
 
-![Create your first box](images/5-create_first_box.png)
+![Create your first box](images/nitrous/5-create_first_box.png)
 
 Wait for the box to provision and start. Then, click "Next"
 
-![Provision and start](images/6-provision.png)
+![Provision and start](images/nitrous/6-provision.png)
 
 Read the introduction to Nitrous editing options and click "Okay, Take Me to my Box!"
 
-![Read about editors](images/7-editors.png)
+![Read about editors](images/nitrous/7-editors.png)
 
-![Go to your box](images/8-go_to_box.png)
+![Go to your box](images/nitrous/8-go_to_box.png)
 
 You are now in the IDE (Integrated Development Environment) for the box.
 
-![Explore the IDE](images/9-ide.png)
+![Explore the IDE](images/nitrous/9-ide.png)
 
 Explore...
 
@@ -67,7 +67,7 @@ From the command line at the bottom of your nitrous IDE:
 
     irb
 
-![Start irb](images/10-irb.png)
+![Start irb](images/ruby/1-irb.png)
 
 #### Use irb as a calculator
 
