@@ -585,11 +585,11 @@ Our story is complete, so let's commit the changes!
 
 To review, we:
 
-- created a Post model with a command-line generator
-- ran a couple of rake tasks to create the database table
+- created a `Post` model with `rails generate`
+- ran a couple of `rake` tasks to create the database table
 - added the `rails_admin` gem to our project (the only line of code we wrote ourselves)
 - re-bundled our gems
-- ran an installer for `rails_admin`
+- ran a rake task to finish installing `rails_admin`
 - restarted the server
 
 And we now have a functioning admin system from which we can create and manage content. Boom.
@@ -606,13 +606,13 @@ Let's sketch out our solution.
 
 Ruby on Rails implements the Model-View-Controller paradigm. So, for our task, we need to:
 
-1. Map the root URL of our site (`/`) to a controller method (called an **action**)
+1. Map the root URL of our site `/` to a controller method, which is called an **action**
 2. Gather the necessary data from the database in the controller action.
 3. Write some ruby-infused HTML for the view
 
 From the command line:
 
-    rails g controller posts index show
+    rails generate controller posts index
 
 Look at /app/controllers/posts_controller.rb
 
