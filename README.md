@@ -16,7 +16,7 @@ Visit http://nitrous.io in a web browser
 
 Fill out the sign up form ad click "Sign Up for Free"
 
-![Sign up to Nitrous](images/nitrous/1-nitrous_sign_up.png)
+![Sign up to Nitrous](images/nitrous/1-sign_up.png)
 
 Confirm your account via your email
 
