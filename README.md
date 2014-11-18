@@ -1,8 +1,8 @@
 # Ruby on Rails Workshop
 
-Southern Oregon University  
-Robert Head  
-Co-founder, codingzeal.com  
+Southern Oregon University
+Robert Head
+Co-founder, codingzeal.com
 Presented: Nov 14, 2014
 
 ## Getting Set Up
@@ -424,19 +424,21 @@ From the nitrous.io IDE command-line console:
 
     rails server
 
+Select menu item: Preview > Port 3000
+
 ![Start the application](/images/rails/2-start_server.png)
 
-Select menu item: Preview > Port 3000
+Preview your Rails app!
 
 ![Preview the application](/images/rails/3-welcome_aboard.png)
 
-Your Rails app already responds to http requests!
-
 Switch back to the browser tab with the IDE.
 
-Let's take a little tour of the structure of the project
+Take a little tour of the structure of the project.
 
-  app/
+  app/controllers
+  app/models
+  app/views
   config/
   db/
 
@@ -447,7 +449,8 @@ We've got the application running, so let's commit the code to a local git repos
 First, add a new tab in the console area of the IDE:
 
 ![Add a new tab](/images/rails/4-new_console_tab.png)
-![New tab open](/images/rails/4-new_tab_open.png)
+
+![New tab open](/images/rails/5-new_tab_open.png)
 
     cd /workspace/blog
 
