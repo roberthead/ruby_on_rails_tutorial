@@ -569,7 +569,7 @@ Now switch back to the preview browser tab and reload the /admin page.
 
 ![Rails admin](/images/rails/15-rails_admin.png)
 
-Wow! A whole admin area where I can create and manage Posts. Go ahead and figure out how to create a post or two.
+We have a whole admin area where we can create and manage Posts. Go ahead and figure out how to create a post or two.
 
 Our user story is complete, so let's commit our changes. Switch to the console with the available command prompt.
 
