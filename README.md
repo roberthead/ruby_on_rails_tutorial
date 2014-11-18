@@ -486,9 +486,11 @@ IN ORDER TO provide content for our readers
 AS bloggers
 WE WANT to enter posts
 
+From our command line console:
+
     rails generate model Post header body:text
 
-Look in db/migrate/
+On the left side, look inside db/migrate/
 
 ![Generate the Post model](/images/rails/7-generate_model.png)
 
@@ -496,7 +498,7 @@ It probably already exists, but let's ensure that the database is created using 
 
     rake db:create
 
-Now let's run the migration that the generator creator.
+Now let's run the migration that the generator created.
 
     rake db:migrate
 
