@@ -529,13 +529,17 @@ Check that it's in the database:
 
 Now let's make a web-based interface that non-coders can use to make blog posts.
 
-Visit http://ruby-toolbox.com
+Visit http://ruby-toolbox.com in a new browser tab.
 
-Ruby Toolbox is a resource for finding **ruby gems**, which are libraries that provide functionality. We want an "admin interface" we can use to edit data. Look around in the Rails Admin Interfaces category. We'll choose rails_admin
+Ruby Toolbox is a resource for finding **ruby gems**, which are libraries that provide functionality. We want an "admin interface" we can use to manage our data. Look around in the Rails Admin Interfaces category. We'll choose the `rails_admin` gem.
 
-In the IDE, open the file called Gemfile (it's in the root directory of the project)
+`rails_admin` is a **Rails Engine**, which is like a whole rails application that we can embed in our own.
 
-Add this line at the bottom.
+In the IDE, open the file called `Gemfile` (it's in the root directory of the project)
+
+The github page for the Rails Admin gem has the installation instructions. https://github.com/sferik/rails_admin#installation
+
+Add this line at the bottom of your Gemfile and save the file.
 
     gem 'rails_admin'
 
@@ -543,15 +547,34 @@ From the command line:
 
     bundle
 
-    rails g rails_admin:install
+![Add the rails_admin gem](/images/rails/11-add_rails_admin.png)
 
-Visit /admin
+    rails generate rails_admin:install
 
-Holy crap!
+![Run the installer](/images/rails/12-install_rails_admin.png)
+
+In the browser tab where you are previewing your application, add /admin to the end of the URL.
+
+We get an error. This is because we need to restart our application whenever we add gems or change a configuration.
+
+![Error page](/images/rails/13-error_page.png)
+
+Switch back to the IDE browser tab. Switch to the console that has the application running. Hit Control-c to stop the server, then start it again:
+
+    rails server
+
+![Restart the server](/images/rails/14-restart_server.png)
+
+Now switch back to the preview browser tab and reload the /admin page.
+
+![Rails admin](/images/rails/15-rails_admin.png)
+
+Wow! A whole admin area where I can create and manage Posts. Go ahead and figure out how to create a post or two.
+
+Our user story is complete, so let's commit our changes. Switch to the console with the available command prompt.
 
     git add .
-
-    git commit -am "Enable entry of posts"
+    git commit -am "Empower blogger to manage posts"
 
 #### User Story #2: Reading Content
 
