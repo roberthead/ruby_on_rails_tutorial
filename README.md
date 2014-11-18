@@ -476,6 +476,8 @@ Now let's make our first commit!
 
 **User stories** are one way of defining what we want our application to do.
 
+http://en.wikipedia.org/wiki/User_story
+
 Let's make a blog!
 
 #### User Story #1: Creating Content
@@ -488,15 +490,23 @@ WE WANT to enter posts
 
 Look in db/migrate/
 
-Look at db/schema.rb
+![Generate the Post model](/images/rails/7-generate_model.png)
+
+It probably already exists, but let's ensure that the database is created using the `rake` utility.
 
     rake db:create
 
-Look at db/schema.rb again
+Now let's run the migration that the generator creator.
 
     rake db:migrate
 
-Look at db/schema.rb again
+![Run migration](/images/rails/8-run_migration.png)
+
+On the left side of the IDE, close and reopen the db directory to refresh its contents.
+
+Click on schema.rb and read the file. It's a description of the structure of your database, which now includes a `posts` table. Notice that it has the columns we asked for, plus `created_at` and `updated_at`. An integer `id` column is also implied, but not shown in the schema file.
+
+![Examine the database schema](/images/rails/9-examine_schema.png)
 
 Let's open a "rails console". It's just like irb, except we are in the context of our application.
 
