@@ -603,7 +603,7 @@ WE WANT to see blog posts
 We want visitors to be able to go to homepage and view posts. Let's sketch out our solution. Ruby on Rails implements the Model-View-Controller paradigm. So, for our task, we need to:
 
 1. Map the root URL of our site `/` to a controller method, which is called an **action**
-2. Gather the necessary data from the database in the controller action.
+2. Gather the necessary data from the database in the controller action
 3. Write some ruby-infused HTML for the view
 
 From the command line:
@@ -645,8 +645,9 @@ Now let's go edit that view file and change it something like:
     <h1>My Blog</h1>
 
     <% @posts.each do |post| %>
-      <h2><%= post.header %>
-      <div><%= post.body %>
+      <h2><%= post.header %></h2>
+      <div><%= post.created_at %></div>
+      <div><%= post.body %></div>
     <% end %>
 
 ![Edit the view template](/images/rails/20-view_template.png)
@@ -661,6 +662,14 @@ It's working, so let's review and commit our changes.
     git diff
     git add .
     git commit -m "Enable viewing of posts"
+
+To review, we:
+
+- generated a new controller, action, and view for posts
+- routed the homepage to the controller action
+- fetched data in our controller action
+- presented that data in our view template
+- committed our changes to the repository
 
 #### User Story #3: Logging in
 
