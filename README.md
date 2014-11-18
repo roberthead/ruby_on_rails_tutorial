@@ -1,9 +1,12 @@
 # Ruby on Rails Workshop
 
 Southern Oregon University
+
 Robert Head
+
 Co-founder, codingzeal.com
-Nov 14, 2014
+
+Presented: Nov 14, 2014
 
 ## Getting Set Up
 
