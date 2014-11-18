@@ -571,16 +571,44 @@ Now switch back to the preview browser tab and reload the /admin page.
 
 We have a whole admin area where we can create and manage Posts. Go ahead and figure out how to create a post or two.
 
-Our user story is complete, so let's commit our changes. Switch to the console with the available command prompt.
+Switch to the console with the available command prompt.
+
+Review what we've changed.
+
+    git status
+    git diff
+
+Our story is complete, so let's commit the changes!
 
     git add .
     git commit -am "Empower blogger to manage posts"
+
+To review, we:
+
+- created a Post model with a command-line generator
+- ran a couple of rake tasks to create the database table
+- added the `rails_admin` gem to our project (the only line of code we wrote ourselves)
+- re-bundled our gems
+- ran an installer for `rails_admin`
+- restarted the server
+
+And we now have a functioning admin system from which we can create and manage content. Boom.
 
 #### User Story #2: Reading Content
 
 IN ORDER TO enjoy the content
 AS readers
 WE WANT to see blog posts
+
+We want visitors to be able to go to homepage and view posts.
+
+Let's sketch out our solution.
+
+Ruby on Rails implements the Model-View-Controller paradigm. So, for our task, we need to:
+
+1. Map the root URL of our site (`/`) to a controller method (called an **action**)
+2. Gather the necessary data from the database in the controller action.
+3. Write some ruby-infused HTML for the view
 
 From the command line:
 
