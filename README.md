@@ -408,7 +408,7 @@ https://www.ruby-toolbox.com/
 
 **Ruby on Rails**, or simply **Rails**, is an open source web application framework written in Ruby.
 
-Rails is a full-stack framework that emphasizes the use of well-known software engineering patterns and paradigms, including 'convention over configuration' (CoC), 'don't repeat yourself' (DRY), the active record pattern, and the model–view–controller (MVC) pattern.
+Rails is a full-stack framework that emphasizes the use of well-known software engineering patterns and paradigms, including _convention over configuration_ (CoC), _don't repeat yourself_ (DRY), the _active record_ pattern, and the _model–view–controller_ (MVC) pattern.
 
 ### Creating a new Rails web application
 
