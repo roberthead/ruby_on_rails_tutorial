@@ -428,7 +428,7 @@ From the nitrous.io IDE command-line console:
 
 Select menu item: Preview > Port 3000
 
-![Preview the application](/images/rails/3-welcome_aboard_.png)
+![Preview the application](/images/rails/3-welcome_aboard.png)
 
 Your Rails app already responds to http requests!
 
