@@ -80,7 +80,7 @@ Jump right in and write some numerical expressions. For example:
     5 * 9
     5 / 3
 
-Quirky! Integer division. Let's experiment.
+Quirky! Integer division. Let's experiment...
 
     5 / 3.0
     5.0 / 3
@@ -96,7 +96,7 @@ In ruby, we call methods (functions) by appending a dot and the method name to a
 
 ##### Method naming style
 
-Method names are typically "snake case" (lower-case words separated by underscores. For example, this_is_snake_case)
+Method names are typically "snake case" (lower-case words separated by underscores. For example, `this_is_snake_case`)
 
 Methods that return a boolean value usually have a question mark at the end.
 
@@ -115,7 +115,9 @@ Why did this fail?
 
     puts "Deep Space " + "9"
 
-Strings can be single-quoted or double-quoted. Double-quoted strings "interpolate" ruby expressions that are inserted with the #{} syntax.
+That's better.
+
+Strings can be single-quoted or double-quoted. Double-quoted strings "interpolate" ruby expressions inserted with the #{} syntax.
 
     'This will print just like it looks #{ 1 + 1 }'
     "Ten plus eight is #{ 10 + 8 }"
