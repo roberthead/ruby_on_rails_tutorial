@@ -1,45 +1,62 @@
+# Ruby on Rails Workshop
+
 Southern Oregon University
-Ruby on Rails Workshop
 Robert Head
 Co-founder, codingzeal.com
 Nov 14, 2014
 
-# Setting up your development environment
+## Getting Set Up
 
-Getting ruby and Ruby on Rails set up on a new workstation can take some effort, especially on a Windows box. But if it hurts, we're probably doing it wrong, so let's do it the modern way, in the cloud!
+Getting _ruby_ and _Ruby on Rails_ set up on a new workstation can take some effort, especially on a Windows box. But if it hurts, we're probably doing it wrong, so let's do it the modern way, in the cloud!
 
 Visit http://nitrous.io in a web browser
 
 Fill out the sign up form ad click "Sign Up for Free"
 
+![Sign up to Nitrous](images/1-nitrous_sign_up.png)
+
 Confirm your account via your email
+
+![Confirm your account](images/2-confirm_via_email.png)
 
 Sign In
 
-Click "Open Dashboard"
+![Sign in](images/3-sign_in.png)
+
+Click "Open Dashboard" from the homepage
+
+![Open dashboard](images/4-open_dashboard.png)
 
 Fill out the "Create Your First Box" form and click "Create Box"
 
-Wait for the box to provision and start.
+![Create your first box](images/5-create_first_box.png)
 
-Click "Next"
+Wait for the box to provision and start. Then, click "Next"
+
+![Provision and start](images/6-provision.png)
 
 Read the introduction to Nitrous editing options and click "Okay, Take Me to my Box!"
 
+![Read about editors](images/7-editors.png)
+
+![Go to your box](images/8-go_to_box.png)
+
 You are now in the IDE (Integrated Development Environment) for the box.
+
+![Explore the IDE](images/9-ide.png)
 
 Explore...
 
 The IDE has the file structure on the left, a text editor in the middle, and a command-line terminal on the bottom. Everything we need!
 
 
-# Introduction to Ruby
+## Introduction to Ruby
 
 **Ruby** is a dynamic, reflective, object-oriented, general-purpose programming language. It was designed and developed in the mid-1990s by Yukihiro "Matz" Matsumoto in Japan.
 
 The "killer app" for ruby has been rapidly developing Web applications in the Ruby on Rails framework.
 
-## irb (interactive ruby shell)
+### irb (interactive ruby shell)
 
 Interactive Ruby Shell (irb) is a REPL (read-eval-print loop) console for programming in ruby.
 
@@ -47,7 +64,11 @@ From the command line at the bottom of your nitrous IDE:
 
     irb
 
-### Use irb as a calculator
+![Start irb](images/10-irb.png)
+
+#### Use irb as a calculator
+
+Every expression in ruby evaluates to a value.
 
 Jump right in and write some numerical expressions. For example:
 
@@ -66,11 +87,11 @@ Exponent syntax
 
     5**3
 
-### Calling Methods
+#### Calling Methods
 
 In ruby, we call methods (functions) by appending a dot and the method name to an object like `object.method`
 
-#### Method naming style
+##### Method naming style
 
 Method names are typically "snake case" (lower-case words separated by underscores. For example, this_is_snake_case)
 
@@ -80,7 +101,7 @@ Methods that return a boolean value usually have a question mark at the end.
     57.even?
     57.odd?
 
-### Strings
+#### Strings
 
     "Some text"
     "fiz" + "bin"
@@ -98,7 +119,7 @@ Strings can be single-quoted or double-quoted. Double-quoted strings "interpolat
 
 You can put any ruby expression you'd like inside #{} and it will insert the result as a String.
 
-### Symbols
+#### Symbols
 
 Symbols are string-like singleton objects, mostly useful as Hash keys. We'll get to Hashes soon!
 
@@ -114,7 +135,7 @@ Style note: symbols are typically lower snake case, just like method names.
     :a.object_id
     :a.object_id
 
-### Variables
+#### Variables
 
 Variables are typically snake case as well.
 
@@ -126,7 +147,7 @@ Assignment is done with a single equals sign.
     z = "bar"
     coder_nonsense = y + z
 
-### More about methods
+#### More about methods
 
 Almost everything in ruby is an object and responds to method calls. For example, every object responds to the 'class' method, which tells us what *type* the object is.
 
@@ -143,7 +164,7 @@ Some methods have an exclamation point at the end of the name. By ruby conventio
     s.update!
     s
 
-### Arrays
+#### Arrays
 
     list = [42, 17, 23]
 
@@ -165,7 +186,7 @@ Some methods
     list.sort.first
     list.class
 
-### Even more about methods
+#### Even more about methods
 
 Some methods accept or require one or more arguments. Let's call the join method on an Array object:
 
@@ -181,7 +202,7 @@ Want a crazy peek behind the curtain? Operators are actually just "syntactic sug
     5.+(4)
     51.* 3
 
-#### Hashes
+##### Hashes
 
 A Hash is also known as a Dictionary or an Associative Array in other languages. It collects key-value pairs.
 
@@ -209,7 +230,7 @@ However, Hashes are unordered, so you can't index them like an array.
 
 ...returns `nil` because there is no key 0.
 
-#### Ranges
+##### Ranges
 
     r = 1..99
     r.include?(0)
@@ -220,7 +241,7 @@ However, Hashes are unordered, so you can't index them like an array.
     r.include?(99.1)
     r.to_a
 
-### Conditionals and Flow
+#### Conditionals and Flow
 
     5 == 3
     1 == 1.0
@@ -241,7 +262,7 @@ Confusify!
 
 Notice that we can do assignment inside interpolated expression within a String. Not readable, but shows very pithy!
 
-### Looping and Blocks
+#### Looping and Blocks
 
     list = (0..10).to_a
 
@@ -267,7 +288,7 @@ There are other iterators. For example, `map` collects the results of the block
 
     squares = list.map { |n| n**2 }
 
-###  Defining your own Classes
+####  Defining your own Classes
 
 Ruby is an object-oriented language, so naturally we want to write our own classes.
 
@@ -295,7 +316,7 @@ Want to add more functionality to the class? You can reopen any class any time!
 
 Even the existing object picked up the new behavior.
 
-#### Inheritance
+##### Inheritance
 
     class Dog < Animal
       def initialize
@@ -306,7 +327,7 @@ Even the existing object picked up the new behavior.
     dog = Dog.new
     dog.speak
 
-#### Mixing Modules into a Class
+##### Mixing Modules into a Class
 
 Ruby has a singly-rooted inheritance hierarchy. If we want to "inherit" behavior from more than one place, we can organize behavior into modules.
 
@@ -352,7 +373,7 @@ Neat. We're done with irb for now.
     exit
 
 
-## Ruby Resources
+### Ruby Resources
 
 Programming Ruby, a.k.a. the "Pickaxe" Book:
 http://ruby-doc.com/docs/ProgrammingRuby/
@@ -372,7 +393,7 @@ https://www.ruby-toolbox.com/
 
 ===================
 
-# Introduction to Ruby on Rails
+## Introduction to Ruby on Rails
 
 According to Wikipedia:
 
@@ -381,7 +402,7 @@ According to Wikipedia:
 Rails is a full-stack framework that emphasizes the use of well-known software engineering patterns and paradigms, including convention over configuration (CoC), don't repeat yourself (DRY), the active record pattern, and model–view–controller (MVC).
 
 
-## Creating a new Rails web application
+### Creating a new Rails web application
 
 From the nitrous.io IDE command-line console:
 
@@ -405,7 +426,7 @@ Let's take a little tour of the structure of the project
   config/
   db/
 
-## Git
+### Git
 
 Let's commit the code to a local git repository.
 
@@ -419,13 +440,13 @@ Enter your configuration and redo:
     git commit -am "Initial commit"
 
 
-## User Stories
+### User Stories
 
 **User stories** are one way of defining what we want our application to do.
 
 Let's make a blog!
 
-### User Story #1: Creating Content
+#### User Story #1: Creating Content
 
 IN ORDER TO create content
 AS bloggers
@@ -487,7 +508,7 @@ Holy crap!
     git commit -am "Enable entry of posts"
 
 
-### User Story #2: Reading Content
+#### User Story #2: Reading Content
 
 IN ORDER TO enjoy the content
 AS readers
