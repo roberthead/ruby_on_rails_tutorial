@@ -421,15 +421,21 @@ From the nitrous.io IDE command-line console:
 
     rails new blog
 
-    cd blog
+![Create a new rails application](/images/rails/1-new.png)
 
-    bundle
+    cd blog
 
     rails server
 
+![Start the application](/images/rails/2-start_server.png)
+
 Select menu item: Preview > Port 3000
 
+![Preview the application](/images/rails/3-welcome_aboard_.png)
+
 Your Rails app already responds to http requests!
+
+Switch back to the browser tab with the IDE.
 
 Let's take a little tour of the structure of the project
 
@@ -439,16 +445,30 @@ Let's take a little tour of the structure of the project
 
 ### Git
 
-Let's commit the code to a local git repository.
+We've got the application running, so let's commit the code to a local git repository.
+
+First, add a new tab in the console area of the IDE:
+
+![Add a new tab](/images/rails/4-new_console_tab.png)
+![New tab open](/images/rails/4-new_tab_open.png)
+
+    cd /workspace/blog
+
+Configure git, replacing John Doe with your own name and email address.
 
     git config --global user.name "John Doe"
     git config --global user.email johndoe@example.com
+
+Initialize the repository and make your first commit.
+
     git init
-    git commit -am "Initial commit"
+
+![Initialize git](/images/rails/6-git.png)
 
 Enter your configuration and redo:
 
-    git commit -am "Initial commit"
+    git add .
+    git commit -m "Initial commit"
 
 ### User Stories
 
