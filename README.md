@@ -52,6 +52,7 @@ Explore...
 
 The IDE has the file structure on the left, a text editor in the middle, and a command-line terminal on the bottom. Everything we need!
 
+- - -
 
 ## Introduction to Ruby
 
@@ -383,7 +384,6 @@ Neat. We're done with irb for now.
 
     exit
 
-
 ### Ruby Resources
 
 Programming Ruby, a.k.a. the "Pickaxe" Book:
@@ -401,8 +401,7 @@ http://apidock.com/ruby
 Get a head start doing _anything_ using 'ruby gems':
 https://www.ruby-toolbox.com/
 
-
-===================
+- - -
 
 ## Introduction to Ruby on Rails
 
@@ -446,7 +445,6 @@ Let's commit the code to a local git repository.
 Enter your configuration and redo:
 
     git commit -am "Initial commit"
-
 
 ### User Stories
 
@@ -515,7 +513,6 @@ Holy crap!
 
     git commit -am "Enable entry of posts"
 
-
 #### User Story #2: Reading Content
 
 IN ORDER TO enjoy the content
@@ -545,7 +542,6 @@ Visit /posts
 Commit our results
 
     git commit -am "Enable viewing of posts"
-
 
 IN ORDER TO enable access control
 AS legitimate bloggers
@@ -599,7 +595,6 @@ WE WANT to log in with accounts
 
   > git add .
   > git commit -m "Add log in"
-
 
 IN ORDER TO protect the content
 AS bloggers
