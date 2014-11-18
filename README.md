@@ -297,6 +297,8 @@ There are other iterators. For example, `map` collects the results of the block
 
 Ruby is an object-oriented language, so naturally we want to write our own classes.
 
+We define a class with the `class` keyword. We define **methods** with the 'def' keyword.
+
     class Animal
       # constructor
       def initialize(name, noise)
@@ -323,6 +325,8 @@ Even the existing object picked up the new behavior.
 
 ##### Inheritance
 
+If you don't specify, a ruby class inherits from the Object class. To define your own, use `<` in the class definition.
+
     class Dog < Animal
       def initialize
         super("Dog", "Woof!")
@@ -335,6 +339,8 @@ Even the existing object picked up the new behavior.
 ##### Mixing Modules into a Class
 
 Ruby has a singly-rooted inheritance hierarchy. If we want to "inherit" behavior from more than one place, we can organize behavior into modules.
+
+Module are defined using, you guessed it, the `module` keyword. Inside the module, we can define methods just like inside a class.
 
     module Feedable
       def feed
@@ -364,7 +370,7 @@ Ruby has a singly-rooted inheritance hierarchy. If we want to "inherit" behavior
     cat.feed
     cat.pet     # raises exception
 
-Let's define a method directly to the cat object:
+You'll rarely see this, but we can even define a method directly on the cat object itself:
 
     def cat.pet
       puts "Aww, yeah. That's the sp... I WILL CUT YOU!!!"
@@ -399,8 +405,6 @@ https://www.ruby-toolbox.com/
 ===================
 
 ## Introduction to Ruby on Rails
-
-According to Wikipedia:
 
 **Ruby on Rails**, or simply **Rails**, is an open source web application framework written in Ruby.
 
