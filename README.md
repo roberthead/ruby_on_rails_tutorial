@@ -229,7 +229,7 @@ Hash values are accessed by key, similar to getting an Array element at a given 
     h[:name]
     h[:known_for]
 
-However, Hashes are unordered, so you can't index them like an array.
+However, Hashes are unordered, so you can't access them by index like you would for an Array.
 
     h[0]
 
