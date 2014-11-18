@@ -302,12 +302,10 @@ We define a **class** with the `class` keyword.
 
 An **instance** of a class will store data in **instance variables**, which have names that are are prefixed with `@`
 
-A class defines the behavior of its instances in **methods**. Methods are defined using the `def` keyword.
+A class defines the behavior of its instances in **methods**. Methods are defined using the `def` keyword. A method named "initialize", if defined, will be called automatically when an object is created.
 
     class Animal
-      # constructor
       def initialize(name, noise)
-        # instance variables being assigned to the argument values
         @name = name
         @noise = noise
       end
@@ -316,7 +314,7 @@ A class defines the behavior of its instances in **methods**. Methods are define
     cat = Animal.new('Cat', 'Mrew!')
     cat.speak  # raises an exception because we didn't define this method
 
-Notice the comments? One-line comments start with a `#`
+Notice the comment? Single-line comments start with a `#`
 
 Want to add more functionality to the class? You can reopen any class any time!
 
