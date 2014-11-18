@@ -512,16 +512,18 @@ Let's open a "rails console". It's just like irb, except we are in the context o
 
     rails console
 
-For inside the rails console, we can initialize and save a post
+From inside the rails console, we can initialize and save a post
 
     post = Post.new
-    post.header = "First!"
-    post.body = "I would like to convey this message."
+    post.header = "Stay hungry. Stay foolish."
+    post.body = "The people who are crazy enough to think they can change the world are the ones who do."
     post.save
 
 Check that it's in the database:
 
     Post.count
+
+![Create your first post](/images/rails/10-create_post.png)
 
 Now let's make a web-based interface that non-coders can use to make blog posts.
 
