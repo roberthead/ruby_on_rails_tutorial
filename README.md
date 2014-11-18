@@ -651,21 +651,18 @@ Now let's go edit that view file and change it something like:
 
 ![Edit the view template](/images/rails/20-view_template.png)
 
-Back in the Nitrous IDE, open /app/views/posts/index.html.erb
+Switch to the preview tab and reload the page.
 
-Restart server
+![Voila!](/images/rails/21-page.png)
 
-Visit /posts again
+It's working, so let's review and commit our changes.
 
-Add fetch to index action
+    git status
+    git diff
+    git add .
+    git commit -m "Enable viewing of posts"
 
-Flesh out the view template
-
-Visit /posts
-
-Commit our results
-
-    git commit -am "Enable viewing of posts"
+#### User Story #3: Logging in
 
 IN ORDER TO enable access control
 AS legitimate bloggers
@@ -719,6 +716,8 @@ WE WANT to log in with accounts
 
   > git add .
   > git commit -m "Add log in"
+
+#### User Story #4: Access Control
 
 IN ORDER TO protect the content
 AS bloggers
