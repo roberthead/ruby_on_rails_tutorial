@@ -616,6 +616,10 @@ From the command line:
 
 Look at /app/controllers/posts_controller.rb
 
+![Generated controller](/images/rails/16-generate_controller.png)
+
+We've generated a Controller class with a method called `index`, which is, by convention, the action that will return a collection of objects to the user.
+
 Look at /config/routes
 
 Visit /posts
