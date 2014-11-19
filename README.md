@@ -12,7 +12,7 @@ Getting _ruby_ and _Ruby on Rails_ set up on a new workstation can take some eff
 
 Visit http://nitrous.io in a web browser
 
-Fill out the sign up form ad click "Sign Up for Free"
+Fill out the sign up form and click "Sign Up for Free"
 
 ![Sign up to Nitrous](images/nitrous/1-sign_up.png)
 
