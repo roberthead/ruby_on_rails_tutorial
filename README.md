@@ -795,6 +795,15 @@ We have a working authentication system, so let's commit our changes!
     git add .
     git commit -m "Add log in"
 
+In review, to create an authentication system, we:
+
+- generated the User model and table
+- installed the `devise` gem
+- add a place for notice and alert messages in our view layout
+- configured rails_admin to recognize devise users
+- restarted the server
+- added links for sign in, sign out, and sign up
+- committed our changes to the repository
 
 #### User Story #4: Access Control
 
@@ -876,3 +885,13 @@ We have a working authorization system, so let's commit our changes!
 
     git add .
     git commit -m "Block non-admins from admin area"
+
+In review, to create an authorization system, we:
+
+- generated a migration to add an admin column to the users table
+- promoted one of our users to admin status using the rails console
+- installed the `cancan` gem
+- defined what admins and non-admins are permitted to do
+- configured rails_admin to recognize cancan permissions
+- restarted the server
+- committed our changes to the repository
