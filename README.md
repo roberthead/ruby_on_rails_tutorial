@@ -772,11 +772,9 @@ Preview our application at /admin
 
 ![Redirect to the log in page](/images/rails/32-log_in.png)
 
-We get a log in screen instead of the admin. Huzzah!
+The request redirected to the sign in page, with a notice at the top.
 
-Let's add sign up, sign in, and sign out links in the layout.
-
-Open app/views/layouts/application.html.erb and add 'sign in', 'sign out', and 'sign up' links to the layout.
+Now open app/views/layouts/application.html.erb and add 'sign in', 'sign out', and 'sign up' links to the layout.
 
     <div>
       <% if current_user %>
@@ -790,16 +788,21 @@ Open app/views/layouts/application.html.erb and add 'sign in', 'sign out', and '
 
 ![Add sign in to layout](/images/rails/33-sign_in_layout.png)
 
-Commit
+We have a working authentication system, so let's commit our changes.
 
     git add .
     git commit -m "Add log in"
 
+
 #### User Story #4: Access Control
+
+We've got a new problem. Anyone who signs up gains access to the admin area. We need authorization.
 
 IN ORDER TO protect the content
 AS bloggers
-WE WANT managing content to require login
+WE WANT managing content to require admin status
+
+
 
   Add cancan to Gemfile
 
