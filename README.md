@@ -788,7 +788,9 @@ Now open app/views/layouts/application.html.erb and add 'sign in', 'sign out', a
 
 ![Add sign in to layout](/images/rails/33-sign_in_layout.png)
 
-We have a working authentication system, so let's commit our changes.
+Using the site, create a new user account and sign in.
+
+We have a working authentication system, so let's commit our changes!
 
     git add .
     git commit -m "Add log in"
@@ -800,18 +802,72 @@ We've got a new problem. Anyone who signs up gains access to the admin area. We 
 
 IN ORDER TO protect the content
 AS bloggers
-WE WANT managing content to require admin status
+WE WANT to restrict access to admins
 
+First, we'll add an admin flag to the users table.
 
+    rails generate migration add_admin_to_users admin:boolean
+    rake db:migrate
 
-  Add cancan to Gemfile
+![Add admin flag](/images/rails/34-admin_column.png)
 
-  > bundle
+Jump into a console.
 
-  > rails g cancan:ability
+    rails console
 
-  Edit ability file
+Now make the most recently added user an admin.
 
-  Edit rails_admin config
+    User.last.update_attribute(:admin, true)
+    exit
 
-  Boom!
+![Create an admin](/images/rails/35-console.png)
+
+Now let's restrict access to the admin section. According to https://www.ruby-toolbox.com/categories/rails_authorization, `cancan` is the right tool for the job.
+
+Add cancan to Gemfile.
+
+    gem 'cancan'
+
+![Add the cancan gem](/images/rails/36-add_cancan.png)
+
+Bundle our gems again.
+
+    bundle
+
+Finish installing cancan using its README on github
+
+![Install cancan](/images/rails/37-cancan_install.png)
+
+    rails generate cancan:ability
+
+![Generate cancan](/images/rails/38-generate_cancan.png)
+
+Edit the app/models/ability file, by uncommenting this code.
+
+    user ||= User.new # guest user (not logged in)
+    if user.admin?
+      can :manage, :all
+    else
+      can :read, :all
+    end
+
+![Edit the ability file](/images/rails/39-ability_file.png)
+
+Turn on cancan in `config/initializers/rails_admin` by uncommenting the appropriate line.
+
+    config.authorize_with :cancan
+
+![Activate cancan for rails_admin](/images/rails/40-cancan_rails_admin.png)
+
+We change the configuration, so let's restart the server again.
+
+    [control-C]
+    rails server
+
+Sign up as a new user. By default, the user will not be an admin. You will no longer be able to edit content.
+
+![Access denied](/images/rails/41-access_denied.png)
+
+Sign out and sign back in as the admin user and access is granted.
+
+![Access granted](/images/rails/42-admin_access.png)
