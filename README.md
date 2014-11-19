@@ -731,7 +731,14 @@ Devise generates certain messages that need to appear on the page, so we'll make
 
 ![Add notice and alert to view layout](/images/rails/27-layout.png)
 
-Visit /
+According to the devise instructions, now we need to run a generator that upgrades the model that will be used for authentication.
+
+    rails generate devise User
+
+![Upgrade the users table](/images/rails/28-users_migration.png)
+
+
+Preview our application.
 
   Add root route to routes.rb
 
