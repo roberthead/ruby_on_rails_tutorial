@@ -611,7 +611,7 @@ From the command line:
 
     rails generate controller posts index
 
-Open /app/controllers/posts_controller.rb
+Open `app/controllers/posts_controller.rb`
 
 ![Generated controller](/images/rails/16-generate_controller.png)
 
@@ -635,7 +635,7 @@ Sort of works already. By rails convention, the controller action renders the co
 
 Before we edit the view template, we're going to need some data, so let's fetch it in the controller action.
 
-Back in the Nitrous IDE, open /app/controllers/posts_controller.rb and let's fetch the data inside the action method definition.
+Back in the Nitrous IDE, open `app/controllers/posts_controller.rb` and let's fetch the data inside the action method definition.
 
     @posts = Post.order("created_at DESC").all
 
@@ -724,7 +724,7 @@ Next, we complete the installation according to the devise instructions.
 
     rails generate devise:install
 
-Devise generates certain messages that need to appear on the page, so we'll make the necessary space for them on our pages. Open `/app/views/layouts/application.html.erb`, add these lines inside the body of the page, and save the file.
+During sign up, log in, and other times, devise generates certain messages that need to appear on the page, so we'll make the necessary space for them on our pages. Open `app/views/layouts/application.html.erb`, add these lines inside the body of the page, and save the file.
 
     <div class="notice"><%= notice %></div>
     <div class="alert"><%= alert %></div>
@@ -737,41 +737,63 @@ According to the devise instructions, now we need to run a generator that upgrad
 
 ![Upgrade the users table](/images/rails/28-users_migration.png)
 
+Now we just need to run the new migration.
 
-Preview our application.
+    rake db:migrate
 
-  Add root route to routes.rb
+Now look in `db/schema.rb` and see all the new columns in the users table.
 
-  Visit / again
+![Check the schema](/images/rails/29-new_schema.png)
 
-  Add notice and alert stuff to layout.
+Devise will want to send emails for sign up confirmation, password reset, and other purposes. In `config/environments/development.rb`, add this configuration inside the block.
 
-  > rails generate devise User
+    config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
-  Look at new migration
+![Configure the mailer](/images/rails/30-mailer_config.png)
 
-  Visit /
+Now we're going to figure out how to require log in for the admin section.
 
-  > rake db:migrate
+In config/initializers/rails_admin.rb, uncomment the lines that activate Devise.
 
-  Visit / again
+    # == Devise ==
+    config.authenticate_with do
+      warden.authenticate! scope: :user
+    end
+    config.current_user_method(&:current_user)
 
-  Restart server
+We changed a configuration, so we need to restart the server.
 
-  Visit / again
+    [control-C]
+    rails server
 
-  Visit /admin
+![Restart the server](/images/rails/31-rails_admin_devise.png)
 
-  Look at fields added by devise and it's migration
+Preview our application at /admin
 
-  Create user
+![Redirect to the log in page](/images/rails/32-log_in.png)
 
-  > rake routes
+We get a log in screen instead of the admin. Huzzah!
 
-  Add sign_in, sign_out, and sign_up to layout
+Let's add sign up, sign in, and sign out links in the layout.
 
-  > git add .
-  > git commit -m "Add log in"
+Open app/views/layouts/application.html.erb and add 'sign in', 'sign out', and 'sign up' links to the layout.
+
+    <div>
+      <% if current_user %>
+        Welcome, <%= current_user.name %>.
+        <%= link_to "Sign Out", destroy_user_session_path, { method: 'delete' } %>
+      <% else %>
+        <%= link_to "Sign In", new_user_session_path %>
+        <%= link_to "Sign Up", new_user_registration_path %>
+      <% end %>
+    </div>
+
+![Add sign in to layout](/images/rails/33-sign_in_layout.png)
+
+Commit
+
+    git add .
+    git commit -m "Add log in"
 
 #### User Story #4: Access Control
 
