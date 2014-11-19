@@ -871,3 +871,8 @@ Sign up as a new user. By default, the user will not be an admin. You will no lo
 Sign out and sign back in as the admin user and access is granted.
 
 ![Access granted](/images/rails/42-admin_access.png)
+
+We have a working authorization system, so let's commit our changes!
+
+    git add .
+    git commit -m "Block non-admins from admin area"
