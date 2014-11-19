@@ -603,7 +603,7 @@ WE WANT to see blog posts
 
 We want visitors to be able to go to homepage and view posts. Let's sketch out our solution. Ruby on Rails implements the Model-View-Controller paradigm. So, for our task, we need to:
 
-1. Map the root URL of our site `/` to a controller method, which is called an **action**
+1. Map the root URL of our site `/` to a controller method, called an **action**
 2. Gather the necessary data from the database in the controller action
 3. Write some ruby-infused HTML for the view
 
@@ -674,25 +674,64 @@ To review, we:
 
 #### User Story #3: Logging in
 
+Now that we have a working blog, we have a problem. Anyone can access the `/admin` area. To secure our site, we'll need an authentication (login) system and an authorization (permissions) system.
+
+Let's start with a log in system.
+
 IN ORDER TO enable access control
 AS legitimate bloggers
-WE WANT to log in with accounts
+WE WANT to log in with a password
 
-  > rails generate model User name
+We'll start with a User model, backed by a `users` table in the database.
 
-  > rake db:migrate
+From the command line console:
 
-  Look at db/schema.rb
+    rails generate model User name
 
-  Visit ruby-toolbox.com and look up 'authorization'
+Refresh the `db/migrations/` folder in the IDE's file navigator. Notice that the generator created a migration for creating the `users` table.
 
-  Add devise gem to Gemfile
+We don't need to edit the migration, let's just run it:
 
-  > bundle
+    rake db:migrate
 
-  > rails generate devise:install
+![Generate the User model](/users/rails/22-generate_user_model.png)
 
-  Visit /
+Check out the updates in `db/schema.rb`
+
+![Schema with users table](/users/rails/23-schema.png)
+
+Now visit https://www.ruby-toolbox.com/ and look up 'authentication'
+
+![Research authentication solutions](/users/rails/24-authentication.png)
+
+We'll choose `devise`. It's another rails engine, just like `rails_admin`.
+
+Go to the github page for devise at https://github.com/plataformatec/devise
+
+![Read devise installation instructions](/users/rails/25-devise_installation.png)
+
+In the IDE, open the Gemfile and add to the bottom.
+
+    gem 'devise'
+
+![Add devise to Gemfile](/users/rails/26-devise_gem.png)
+
+From the console, bundle our gems.
+
+    bundle
+
+Next, we complete the installation according to the devise instructions.
+
+    rails generate devise:install
+
+Devise generates certain messages that need to appear on the page, so we'll make the necessary space for them on our pages. Open `/app/views/layouts/application.html.erb`, add these lines inside the body of the page, and save the file.
+
+    <div class="notice"><%= notice %></div>
+    <div class="alert"><%= alert %></div>
+
+![Add notice and alert to view layout](/users/rails/27-layout.png)
+
+Visit /
 
   Add root route to routes.rb
 
