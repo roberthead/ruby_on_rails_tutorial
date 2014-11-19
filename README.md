@@ -694,27 +694,27 @@ We don't need to edit the migration, let's just run it:
 
     rake db:migrate
 
-![Generate the User model](/users/rails/22-generate_user_model.png)
+![Generate the User model](/images/rails/22-generate_user_model.png)
 
 Check out the updates in `db/schema.rb`
 
-![Schema with users table](/users/rails/23-schema.png)
+![Schema with users table](/images/rails/23-schema.png)
 
 Now visit https://www.ruby-toolbox.com/ and look up 'authentication'
 
-![Research authentication solutions](/users/rails/24-authentication.png)
+![Research authentication solutions](/images/rails/24-authentication.png)
 
 We'll choose `devise`. It's another rails engine, just like `rails_admin`.
 
 Go to the github page for devise at https://github.com/plataformatec/devise
 
-![Read devise installation instructions](/users/rails/25-devise_installation.png)
+![Read devise installation instructions](/images/rails/25-devise_installation.png)
 
 In the IDE, open the Gemfile and add to the bottom.
 
     gem 'devise'
 
-![Add devise to Gemfile](/users/rails/26-devise_gem.png)
+![Add devise to Gemfile](/images/rails/26-devise_gem.png)
 
 From the console, bundle our gems.
 
@@ -729,7 +729,7 @@ Devise generates certain messages that need to appear on the page, so we'll make
     <div class="notice"><%= notice %></div>
     <div class="alert"><%= alert %></div>
 
-![Add notice and alert to view layout](/users/rails/27-layout.png)
+![Add notice and alert to view layout](/images/rails/27-layout.png)
 
 Visit /
 
